@@ -54,6 +54,48 @@ src/
 db.json
 ```
 
+## 컴포넌트 구성도
+```mermaid
+flowchart TD
+  main[main.js] --> app[Vue App (App.vue)]
+  app --> nav[Sidebar (router-link)]
+  app --> rv[router-view]
+
+  rv --> r{Routes (router/index.js)}
+  r --> dash[DashboardView.vue]
+  r --> students[StudentsView.vue]
+  r --> detail[StudentDetailView.vue]
+  r --> attendance[AttendanceView.vue]
+  r --> payments[PaymentsView.vue]
+  r --> unpaid[UnpaidView.vue]
+  r --> consultations[ConsultationsView.vue]
+  r --> makeup[MakeupClassesView.vue]
+  r --> classes[ClassesView.vue]
+  r --> checkout[CheckoutView.vue]
+  r --> paySuccess[PaymentSuccessView.vue]
+  r --> payFail[PaymentFailView.vue]
+  r --> payHistory[PaymentHistoryView.vue]
+
+  dash --> googleChart[GoogleChart.vue]
+  googleChart --> googleLoader[Google Charts loader.js]
+
+  dash --> stores[Pinia Stores (student/payment/attendance/consultation/...)]
+  students --> stores
+  detail --> stores
+  attendance --> stores
+  payments --> stores
+  unpaid --> stores
+  consultations --> stores
+  makeup --> stores
+  classes --> stores
+  checkout --> paymentGateway[paymentGatewayStore.js]
+  payHistory --> paymentGateway
+
+  stores --> api[services/api.js (axios)]
+  paymentGateway --> api
+  api --> json[json-server @ http://localhost:3000]
+```
+
 ## 샘플 데이터
 - students 120명, classes 9개, teachers 7명
 - attendance 280건, payments 140건
