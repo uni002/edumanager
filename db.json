@@ -8826,5 +8826,16 @@
       "createdAt": "2026-05-07T05:40:56.769Z",
       "id": 112
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@educlass.com",
+      "password": "admin1234",
+      "name": "관리자",
+      "role": "admin",
+      "createdAt": "2024-01-01"
+    }
   ]
 }
