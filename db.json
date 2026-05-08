@@ -8836,6 +8836,15 @@
       "name": "관리자",
       "role": "admin",
       "createdAt": "2024-01-01"
+    },
+    {
+      "username": "hj1234",
+      "email": "test@naver.com",
+      "password": "hj1234",
+      "name": "h",
+      "role": "user",
+      "createdAt": "2026-05-07",
+      "id": 2
     }
   ]
 }
